@@ -7,7 +7,7 @@ Use this for README, runbooks, executive docs, vendor requests, client PDFs, cha
 - Developer docs: setup, architecture, tests, local commands.
 - Operator docs: deploy, rollback, health checks, incidents, backups, secrets.
 - Decision-maker docs: purpose, delivered scope, value, risk, roadmap, responsibilities.
-- Vendor/prestataire docs: exact technical ask, expected contract, validation recipe.
+- Vendor/service provider docs: exact technical ask, expected contract, validation recipe.
 
 ## Document Rules
 

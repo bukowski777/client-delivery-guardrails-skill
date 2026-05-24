@@ -33,7 +33,7 @@ Create a short working map:
 - Is this code path used in production, demo, or only documentation?
 - Is the change data-contract compatible?
 - What breaks if the sync is late, partial, duplicated, or retried?
-- Who consumes the output: field user, admin, manager, prestataire, operator?
+- Who consumes the output: field user, admin, manager, service provider, operator?
 - What is the rollback path?
 
 ## Red Flags
