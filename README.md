@@ -1,9 +1,9 @@
-# Evatika Project Delivery Skill
+# Client Delivery Skill
 
-[![Validate skill](https://github.com/bukowski777/evatika-project-delivery-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/bukowski777/evatika-project-delivery-skill/actions/workflows/validate.yml)
+[![Validate skill](https://github.com/bukowski777/client-delivery-skill/actions/workflows/validate.yml/badge.svg)](https://github.com/bukowski777/client-delivery-skill/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Reusable Codex skill for delivering client software safely.
+Reusable Agent Skill for delivering client software safely in Codex and Claude Code.
 
 It helps an agent orient itself in a project, keep changes scoped, treat integrations as contracts, verify production-sensitive work, and produce useful handover notes.
 
@@ -13,7 +13,7 @@ This repository intentionally contains no client data, secrets, private producti
 
 Most AI-assisted coding examples focus on writing code. Client delivery also needs context, rollback paths, observability, security, documentation, and clear ownership.
 
-This skill captures those habits in a reusable Codex workflow for freelancers, agencies, and small teams shipping real client projects.
+This skill captures those habits in a reusable agent workflow for freelancers, agencies, and small teams shipping real client projects.
 
 ## Use It For
 
@@ -37,61 +37,83 @@ This skill captures those habits in a reusable Codex workflow for freelancers, a
 
 ## Install
 
-From the repository root:
+From the repository root, install for Codex:
 
 ```bash
 ./install.sh
 ```
 
-The installer copies `evatika-project-delivery/` into:
+Install for Claude Code:
 
-```text
-~/.codex/skills/evatika-project-delivery
+```bash
+./install.sh --target claude-code
 ```
 
-If a previous local install exists, it is backed up before replacement.
+Install across Codex, Claude Code, and the shared agent skills directory:
+
+```bash
+./install.sh --target all
+```
+
+Target paths:
+
+```text
+~/.codex/skills/client-delivery
+~/.claude/skills/client-delivery
+~/.agents/skills/client-delivery
+```
+
+If a previous local install exists, it is backed up before replacement. The installer also backs up the legacy `evatika-project-delivery` folder when it exists in the same target root, so the old and new skill names do not stay active side by side.
+
+Claude Code installs omit the Codex-specific `agents/openai.yaml` metadata file. The source package still keeps it for Codex compatibility.
 
 Useful options:
 
 ```bash
 ./install.sh --dry-run
-SKILL_TARGET_DIR="$HOME/.codex/skills/evatika-project-delivery" ./install.sh
+SKILL_TARGET_DIR="$HOME/.codex/skills/client-delivery" ./install.sh
 ```
 
-## Use In Codex
+## Use In Codex And Claude Code
 
-Ask explicitly:
+In Codex, ask explicitly:
 
 ```text
-Use $evatika-project-delivery for this task.
+Use $client-delivery for this task.
+```
+
+In Claude Code, invoke it directly:
+
+```text
+/client-delivery
 ```
 
 Examples:
 
 ```text
-Use $evatika-project-delivery to audit this production deploy flow and propose a rollback-safe release plan.
+Use $client-delivery to audit this production deploy flow and propose a rollback-safe release plan.
 ```
 
 ```text
-Use $evatika-project-delivery to diagnose why this Power Automate sync is stale without changing production data.
+Use $client-delivery to diagnose why this Power Automate sync is stale without changing production data.
 ```
 
 ```text
-Use $evatika-project-delivery to review the tablet UX and produce a client-ready delivery report.
+Use $client-delivery to review the tablet UX and produce a client-ready delivery report.
 ```
 
 ## Included
 
 | Path | Purpose |
 | --- | --- |
-| `evatika-project-delivery/SKILL.md` | Main skill, workflow, risk gates, and reference router. |
-| `evatika-project-delivery/references/` | Detailed guidance for discovery, integrations, release, diagnosis, UX, security, testing, and handover. |
-| `evatika-project-delivery/templates/` | Reusable report, incident, integration request, release plan, and runbook structures. |
+| `client-delivery/SKILL.md` | Main skill, workflow, risk gates, and reference router. |
+| `client-delivery/references/` | Detailed guidance for discovery, integrations, release, diagnosis, UX, security, testing, and handover. |
+| `client-delivery/templates/` | Reusable report, incident, integration request, release plan, and runbook structures. |
 | `scripts/validate-skill.sh` | Local package validation and obvious secret-pattern checks. |
 | `scripts/package-skill.sh` | Builds a release zip containing the installable skill directory. |
 | `.github/workflows/validate.yml` | GitHub Actions validation on push and pull request. |
 | `.github/workflows/release.yml` | GitHub Actions release packaging on `v*` tags. |
-| `install.sh` | Local installer with dry-run, backup, and configurable target directory. |
+| `install.sh` | Local installer with Codex, Claude Code, shared-agents, dry-run, backup, and configurable target support. |
 
 ## Validate
 
@@ -112,7 +134,7 @@ Build a local release archive:
 scripts/package-skill.sh --version v0.1.0
 ```
 
-The archive is written to `dist/` and contains the installable `evatika-project-delivery/` skill directory.
+The archive is written to `dist/` and contains the installable `client-delivery/` skill directory.
 
 To publish a GitHub release, push a version tag:
 

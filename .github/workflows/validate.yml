@@ -19,3 +19,6 @@ jobs:
 
       - name: Run repository checks
         run: bash scripts/validate-skill.sh
+
+      - name: Build package smoke test
+        run: bash scripts/package-skill.sh --version ci --output-dir /tmp/client-delivery-dist

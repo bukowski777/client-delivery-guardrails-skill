@@ -2,7 +2,7 @@
 
 ## Update the Skill When
 
-- A practice repeats across several Evatika/client projects.
+- A practice repeats across several client projects.
 - A costly mistake could have been prevented by a checklist or gate.
 - A fragile procedure deserves a script, reference, or template.
 - A vocabulary distinction keeps recurring, such as source of truth, projection, legacy path, demo path, or rollback tag.
@@ -16,9 +16,9 @@
 
 ## File Ownership
 
-- `evatika-project-delivery/SKILL.md`: mission, invocation scope, operating defaults, workflow, gates, and router.
-- `evatika-project-delivery/references/`: detailed operational procedures by domain.
-- `evatika-project-delivery/templates/`: reusable output structures.
+- `client-delivery/SKILL.md`: mission, invocation scope, operating defaults, workflow, gates, and router.
+- `client-delivery/references/`: detailed operational procedures by domain.
+- `client-delivery/templates/`: reusable output structures.
 - `scripts/`: repository maintenance, validation, and packaging helpers only.
 - `install.sh`: local installation helper only.
 
@@ -28,8 +28,8 @@
 bash scripts/validate-skill.sh
 ./install.sh --dry-run
 scripts/package-skill.sh --version test-package
-find evatika-project-delivery -maxdepth 3 -type f | sort
-sed -n '1,180p' evatika-project-delivery/SKILL.md
+find client-delivery -maxdepth 3 -type f | sort
+sed -n '1,180p' client-delivery/SKILL.md
 ```
 
 ## Review Checklist
@@ -40,4 +40,4 @@ sed -n '1,180p' evatika-project-delivery/SKILL.md
 - Install behavior is reversible or dry-run testable.
 - Release packaging produces an installable zip without local metadata files.
 - CI can validate the package without external services.
-- The change improves behavior in future Codex runs, not only documentation aesthetics.
+- The change improves behavior in future agent runs, not only documentation aesthetics.

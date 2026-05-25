@@ -4,6 +4,9 @@ All notable changes to this skill repository should be documented here.
 
 ## 2026-05-25
 
+- Renamed the skill from `evatika-project-delivery` to the function-oriented `client-delivery`.
+- Added Claude Code and shared-agent installation targets through `install.sh --target`.
+- Added legacy install backup for existing `evatika-project-delivery` local copies.
 - Hardened installation with dry-run support, backup-before-replace, and configurable target directory.
 - Added validation script and GitHub Actions workflow for skill structure, frontmatter, router links, shell syntax, and obvious secret patterns.
 - Added security/data-handling and testing/quality-gate references.

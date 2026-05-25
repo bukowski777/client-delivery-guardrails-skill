@@ -5,7 +5,7 @@ This repository is a reusable operational skill, not a project diary. Add only g
 ## Good Additions
 
 - A checklist that would have prevented a repeated delivery mistake.
-- A routing rule that helps Codex load the right reference at the right time.
+- A routing rule that helps the agent load the right reference at the right time.
 - A generic template for reports, runbooks, incidents, releases, or vendor requests.
 - A validation script that reduces packaging or maintenance risk.
 

@@ -1,9 +1,9 @@
 ---
-name: evatika-project-delivery
+name: client-delivery
 description: Use when delivering client software changes that require project orientation, scoped implementation, integration contracts, production-safe release, incident diagnosis, UX review, security/data handling, or operator/client handover across web apps, APIs, Docker/VPS/GitHub Actions, SQL/ERP, Supabase/PostgreSQL, Power Automate, Praxedo, n8n, and sync flows.
 ---
 
-# Evatika Project Delivery
+# Client Delivery
 
 ## Mission
 

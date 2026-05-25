@@ -2,14 +2,14 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-SKILL_NAME="evatika-project-delivery"
+SKILL_NAME="client-delivery"
 SKILL_DIR="${ROOT_DIR}/${SKILL_NAME}"
 DIST_DIR="${ROOT_DIR}/dist"
 VERSION=""
 
 usage() {
   cat <<'EOF'
-Package the evatika-project-delivery Codex skill as a release zip.
+Package the client-delivery Agent Skill as a release zip.
 
 Usage:
   scripts/package-skill.sh [--version VERSION] [--output-dir DIR] [--help]
@@ -75,7 +75,7 @@ fi
 bash "${ROOT_DIR}/scripts/validate-skill.sh"
 
 mkdir -p "${DIST_DIR}"
-STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/evatika-package.XXXXXX")"
+STAGING_DIR="$(mktemp -d "${TMPDIR:-/tmp}/client-delivery-package.XXXXXX")"
 cleanup() {
   rm -rf "${STAGING_DIR}"
 }
